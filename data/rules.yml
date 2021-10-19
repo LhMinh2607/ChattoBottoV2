@@ -1,0 +1,53 @@
+version: "2.0"
+
+rules:
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_faq
+- rule: respond to chitchat
+  steps:
+  - intent: chitchat
+  - action: utter_chitchat
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - rule: Say 'I am a bot' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge
+#   - action: utter_iamabot
+
+# - rule: Say 'I will rule the world' anytime the user challenges
+#   steps:
+#   - intent: bot_challenge2
+#   - action: utter_irule
+
+- rule: Reply to weather question
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+
+# - rule: Reply to name question
+#   steps:
+#   - intent: ask_for_name
+#   - action: action_name
+
+- rule: Activate userInfo form
+  steps:
+  - intent: introduce
+  - action: userinfo_form
+  - active_loop: userinfo_form
+
+- rule: Submit userInfo form
+  condition:
+  - active_loop: userinfo_form
+  steps:
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slots_values

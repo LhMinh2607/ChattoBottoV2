@@ -1,0 +1,440 @@
+version: "2.0"
+nlu:
+- intent: greet #user greets
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good afternoon
+    - what's up
+    - wassup!
+    - hello world
+    - hello hell
+    - good day mate
+    - mornin'
+- intent: goodbye #user says goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - see you around
+    - bye bye
+    - see you later
+    - bai bai
+    - cul8ter
+    - bye forever
+- intent: affirm #user affirms
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - true
+    - r/technicallythetruth
+    - yep
+    - affirmative
+    - can confirm
+    - ye
+    - qui
+    - amirite
+    - am I right
+    - I know right
+    - ikr
+    - ok
+    - okay
+- intent: deny #user denies
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - false
+    - can't confirm
+    - yepn't
+    - yesn't
+    - nope
+    - nah
+    - nah ah
+    - no thanks
+    - no thank you
+    - nein
+- intent: chitchat/mood_great #user is happy
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - neat
+    - nice
+    - thumbsup
+    - It feels so good to not be dumb like you
+- intent: chitchat/mood_bad #user is sad
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+    - this is so sad! Alexa, play Despacito
+- intent: chitchat/bot_challenge #user challenges the bot 1
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you sure you're a bot?
+    - are you sure you're a bot and not a brain controlling a skeleton covered with flesh
+- intent: chitchat/bot_challenge2 #user challenges the bot 2
+  examples: |
+    - what do you think about the world?
+    - you're lovely
+    - will you rule the world?
+    - what do you think about mankind?
+- intent: ask_about_weather #user asks about weather
+  examples: |
+    - How is the weather [tomorrow](weather)?
+    - How is the weather [today](weather)?
+    - How was the weather [yesterday](weather)?
+    - And [today]?
+    - And [yesterday]?
+    - And [tomorrow]?
+    - How about [tomorrow](weather)?
+    - How about [today](weather)?
+    - How about [yesterday](weather)?
+- intent: ask_for_name #user asks for bot's name
+  examples: |
+    - what's your [name](you)?
+    - how [old](you) are you?
+    - who [created](you) you?
+- intent: introduce #user introduces
+  examples: |
+    - May I introduce myself?
+    - My name is
+    - Who am I?
+    - Do you know me?
+    - Do you know who am I?
+    - Wanna know my name?
+    - Can you set my username?
+    - wanna know my name
+    - what's my name?
+    - remember me?
+    - remember my name
+# - intent: introduce_name
+#   examples: |
+#     - my name is [LhMinh2607](username)
+#     - the name's [LhMinh2607](username)
+#     - you can call me [LhMinh2607](username)
+#     - just call me [LhMinh2607](username)
+#     - set my name as [LhMinh2607](username)
+- intent: how_are_you #user asks if the bot was ok
+  examples: |
+    - And you?
+    - How about you?
+    - Then what's about you?
+    - What's about you?
+    - How are you?
+    - How ya doin?
+    - How are you doing?
+- intent: faq/opening_hours #user asks for opening hours
+  examples: |
+    - what are your opening hours?
+    - when does your store open?
+    - can I know your schedule?
+    - opening hours?
+- intent: faq/closing_hours #user asks for closing hours
+  examples: |
+    - what are your closing hours?
+    - when does your store close?
+- intent: faq/cookie #user asks about cookies
+  examples: |
+    - what do you collect from users?
+    - what are you planning to do with cookies?
+    - why do you use cookies?
+    - what is cookies?
+    - are cookies edible?
+    - can I eat your cookies?
+    - what information do you extract from users?
+- intent: faq/business #user asks for business
+  examples: |
+    - what kind of business are you?
+    - what kinda business are you?
+    - what do you do?
+    - what do you guys sell?
+    - what kinda store is this?
+- intent: faq/office #user asks for address
+  examples: |
+    - do you have an office?
+    - where is your office?
+    - can I have your address?
+- intent: faq/contact #user asks for contact
+  examples: |
+    - how do I contact you?
+    - do you have email?
+    - do you have a phone number I can call?
+    - what social media platform shall I reach to connect to your company?
+- intent: help #user needs help
+  examples: |
+    - help
+    - help please
+    - I need help
+    - I need support
+    - can you support me?
+    - I wanna request a support ticket
+- intent: list_abilities #user wants bot to list all abilities
+  examples: |
+    - what can you do?
+    - how do you help me?
+    - how can you help me?
+    - what's your abilities?
+    - list abilities
+- intent: info_about_chatting #user asks for info about chatting
+  examples: |
+    - can I just chat with you?
+    - can you spend some time with me?
+    - can we just chat?
+    - can I not focus on the business but chat with you instead?
+    - let's chat
+    - screw the business
+    - screw the work
+    - scew the shopping
+    - forget shopping
+    - I wanna have a talk with you
+- intent: chitchat/send_picture #user wants bot to send pictures
+  examples: |
+    - can you send me some pics?
+    - can you send me a pic?
+    - send some pics
+    - send me meme
+    - send meme please
+    - send pics please
+    - can you send anything other than text?
+    - send funny thing
+    - send something funny
+    - I wanna laugh
+    - make me laugh
+    - make me lol
+    - tickle me
+- intent: chitchat/express_funny_emotion #user expresses funny emotion
+  examples: |
+    - lol
+    - bruhhh
+    - lolololol
+    - kekw
+    - pog
+    - pogger
+    - pogged
+- intent: chitchat/express_bruh_moment #the user expresses bruh moment
+  examples: |
+    - bruh
+    - bruh moment
+    - bruh momento
+    - bruh momentum
+    - bruh what?
+    - bruh lol
+    - bủh
+    - buh
+- intent: chitchat/ask_for_status #user asks what the bot was doing
+  examples: |
+    - what are you doing?
+    - what are you planning?
+    - are you busy?
+    - are you free?
+    - do you have some spare time?
+    - where are you going?
+    - what are you doing now?
+    - what's on your mind?
+- intent: chitchat/mention_rickroll #user wants to be rickrolled
+  examples: |
+    - rickroll me
+    - don't rickroll me
+    - stop rickrolling me please
+    - who's Rick Atsley?
+    - what's the most popular song in the 80s?
+    - what's your most favourite song in the 80s?
+    - who's your favourite singer?
+    - never gonna give you up
+    - never gonna let you down
+    - never gonna run around and desert you
+    - never gonna make you cry
+    - never gonna say goodbye
+    - never gonna tell a lie and hurt you
+- intent: thanks #user thanks
+  examples: |
+    - thanks
+    - thank you
+    - tysm
+    - ty
+    - thank you so much
+    - I'm grateful for that
+    - thanks for helping out
+    - thanks so much
+    - you helped me
+    - thanks for your help
+    - that's helpful
+    - you're helpful
+    - thanks
+    - you're useful
+    - (y)
+    - 👍
+    - good bot
+    - nice bot
+    - helpful bot
+    - great bot
+    - awesome bot
+    - very nice bot
+    - obedient bot
+- intent: complain #user complains
+  examples: |
+    - not helpful
+    - not good
+    - not ok
+    - didn't help
+    - didn't help at all
+    - you're not useful
+    - bad bot
+    - very bad bot
+    - dumb bot
+    - you're stupid
+    - dumbass
+    - idiot
+    - moron
+    - you're so dumb
+    - you didn't help me
+    - you ignored me
+    - you didn't care
+    - you don't care
+    - you don't help me
+    - bot's bad
+    - why are you so dumb?
+    - why are you so stupid?
+    - what are you? A moron?
+    - I want to file a complaint
+    - I want to complain
+    - I wanna complain
+    - your service sucks
+    - your service is flaw
+    - I have bad experience with your service
+    - I want a refund
+- intent: ask_why #user asks why
+  examples: |
+    - why?
+    - why tho?
+    - but why?
+    - why do you do this?
+    - why do you do that?
+    - for what reason?
+    - what do you do that for?
+    - what was your intention?
+    - what's your intention?
+    - what is your intention?
+    - why are you doing this?
+    - why is that?
+    - why did you do that?
+    - why do you feel the need to do that?
+    - why do you even do that?
+    - what do you even do that for?
+    - Explain why?
+- intent: ask_what #user asks what
+  examples: |
+    - what?
+    - what is that?
+    - what is this?
+    - can you explain?
+    - i don't understand
+    - i can't figure out
+    - i don't get it
+    - i can't get it
+    - i can't understand
+    - how to understand
+    - what did you do
+    - explain please
+    - please explain to me
+    - elaborate please
+    - can you elaborate
+    - can you tell me more about that
+    - can you tell me more about this
+    - more details please
+    - I'm confused
+    - confusion
+    - I'm a Confucianist
+    - I follow Confucianism
+    - I'm Confucius
+    - That's confusing
+    - This's confusing
+- intent: feedback
+  examples: |
+    - I'd like to rate this page
+    - I'd like to rate this bot
+    - I'd like to rate you
+    - I'd like to rate my experience
+    - I want to submit a feedback
+    - I want to leave a review
+    - I want to leave a feedback
+    - Can I leave a feedback?
+    - Can I leave a review?
+    - feedback
+    - review
+- intent: view_feedback
+  examples: |
+    - I'd like to view my feedback
+    - how much did I rate you?
+    - can I view my feedback history?
+    - I want to view my feedback result
+    - Let me see my feedback
+- synonym: name
+  examples: |
+    - identity
+    - identify
+- synonym: age
+  examples: |
+    - old
+- synonym: author
+  examples: |
+    - created
+    - made
+- synonym: pic
+  examples: |
+    - pics
+    - picture
+    - pictures
+    - photo
+    - photos
+    - image
+    - images
+- synonym: favourite
+  examples: |
+    - favorite

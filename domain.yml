@@ -1,0 +1,456 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- chitchat:
+    is_retrieval_intent: true
+- faq:
+    is_retrieval_intent: true
+- how_are_you
+- introduce
+- introduce_name
+- ask_about_weather
+- ask_for_name
+- affirm
+- deny
+- goodbye
+- help
+- list_abilities
+- info_about_chatting
+- thanks
+- complain
+- ask_why
+- ask_what
+- feedback
+- view_feedback
+entities:
+- userinfo
+- weather
+- you
+- alias
+
+
+slots:
+  username:
+    type: text
+  user_age:
+    type: text
+  rude_bot:
+    type: text
+  rude_bot2:
+    type: text
+  opinion_about_bot:
+    type: text
+  star_rating:
+    type: text
+responses:
+  utter_chitchat:
+  - text: testing this solution and fuck it tooo
+  utter_faq:
+  - text: testing this solution and fuck it tooo
+  utter_greet: #greets user
+  - text: Hey! How are you?
+  - text: Hey! How are you doing?
+  - text: Whassup My human
+  - text: Hi! You're ok?
+  - text: What's up! Don't respond like The ceiling. How're you?
+  - text: Good day mate.
+  - text: Hi
+  utter_greet_with_name: #greets user but with username
+  - text: Hey {username}! How are you?
+  - text: Hey {username}! How are you doing?
+  - text: Whassup My human {username}
+  - text: Hi {username}! You're ok?
+  - text: What's up {username}! Don't respond like The ceiling. How're you?
+  - text: Good day {username}.
+  - text: Hi {username}
+  utter_imfine: #bot is fine
+  - text: I'm doing well. Thanks.
+  - text: I'm always ok
+  - text: I'm ok as long as you're alive
+  - text: Better than ever
+  - text: Better than you :)
+  utter_offer_help: #bot offers help
+  - text: How can I help you?.
+  - text: How may I help you?
+  - text: You need help?
+  - text: Helper is ready.
+  - text: I'm right here. At your service, my Lord. lol
+  utter_list_abilities: #bot lists its abilities
+  #- text: You can ask me about the weather, FAQ. I can even assist you in Signing up for our newsletter or help you find the prodcuts you're looking for. Either way, I'm eager to help. :)
+  - text: You can ask me about the weather, FAQ. You may chat with me :). I can remember your name for this session.
+  - text: Commenting on Weather, FAQ, Chatting, Sending pictures, Memorizing your name and age.
+  utter_info_about_chatting: #info about chatting
+  - text: You may chat with me. But remember my sole purpose is to support customers and not a personal chatbot :).
+  - text: You can chat with me but I'd like to help you instead.
+  - text: Chatting is ok. But letting me help you is better.
+  - text: I'm a helping bot afterall but yeah, you can chat with me.
+  - text: I enjoy chatting with user.
+  - text: Maybe chatting is more fun than assisting user, who knows?
+  - text: Ok, let's chat.
+  utter_remind_of_business:
+  - text: You've gone to far. We have works to do. Remember that chitchat is only temporary.
+  utter_chitchat/mood_bad: #bot responds to user being sad
+  - text: Here is something to cheer you up. Some cute puppies https://www.youtube.com/watch?v=j5a0jTc9S10
+  - text: Oh, That's bad. Tell me when you're ready
+  - text: Don't worry. It'll be over. :')
+  - text: Hope this would cheer you up :)).
+    image: "https://cdn.mos.cms.futurecdn.net/UpjQDoXPZDrfRozgBXeadm-1200-80.jpg"
+  - text: Oof. Let me know if I can help
+  utter_chitchat/mood_great: #bot responds to user being happy
+  - text: Great, carry on!
+  - text: Go on
+  - text: :) I'm listening
+  - text: Nice B)
+  - text: Neat
+  - text: uh huh
+  - text: Oh, I was not paying attention. What did I miss?
+  utter_chitchat/send_picture: #bot sends pictures
+  - text: 'I got you:'
+    image: "https://media.discordapp.net/attachments/825554422272622623/897793480938643486/UpjQDoXPZDrfRozgBXeadm-1200-80.png?width=1062&height=676"
+    # image: "https://cdn.mos.cms.futurecdn.net/UpjQDoXPZDrfRozgBXeadm-1200-80.jpg"
+  - text: 'You seem SUS. Here is one:'
+    image: "https://i.ytimg.com/vi/jU0M9RP3sAc/maxresdefault.jpg"
+  - text: 'Hmm: '
+    image: "https://i.redd.it/hricopykvtn71.png"
+  - text: 'Seems legit:"'
+    image: "https://media.discordapp.net/attachments/680411241025372191/894786174374256681/unknown.png?width=664&height=676"
+    # image: "https://preview.redd.it/1avs4vg5f9r71.jpg?width=640&height=853&crop=smart&auto=webp&s=24416a9393fcc095a1868ed76359907a28113809"
+  - text: 'Good night:'
+    image: "https://i.redd.it/uzu8hxmu13o71.jpg"
+  - text: 'Time traveler huh:?'
+    image: "https://preview.redd.it/78r0a94xfxq71.jpg?width=720&format=pjpg&auto=webp&s=83aca48bc5f5918e41face59882abaedd4bf6ae5"
+  - text: 'Nice set of chairs:'
+    image: "https://preview.redd.it/g5rm01exfxq71.jpg?width=720&format=pjpg&auto=webp&s=bb864c4ab86aee83b451aa2213709c790bc5fd48"
+  - text: 'Whassup man:'
+    image: "https://preview.redd.it/usj14mfapym71.jpg?width=720&format=pjpg&auto=webp&s=1e91c8d72f8c50ad2cffad63ff84356bd60365e4"
+  - text: 'No context given:'
+    image: "https://media.discordapp.net/attachments/680411241025372191/894921392364081202/244529416_202593171971012_5151636104507560887_n.png"
+    # image: "https://preview.redd.it/c0wtktcapym71.jpg?width=640&crop=smart&auto=webp&s=293f17fcfa7571cccb9774ff295ef4506ca2a5f6"
+  - text: 'Relatable. Amirite:'
+    image: "https://i.pinimg.com/736x/be/02/1a/be021a42f9536e80484d46be489e280f.jpg"
+  - text: 'Someone hacked a whole school district just to do this'
+    image: "https://media.discordapp.net/attachments/680411241025372191/897671591910080513/unknown.png?width=688&height=676"
+  - text: "Why didn't I know this sooner"
+    image: "https://media.discordapp.net/attachments/680411241025372191/897612149231325225/d61f4fc137c8f57ab23a30324542d70d.png"
+  - text: "..."
+    image: "https://media.discordapp.net/attachments/680411241025372191/897318089014788096/unknown.png"
+  - text: "hmmm..."
+    image: "https://media.discordapp.net/attachments/680411241025372191/897121337485705266/3ymcu4lka2s71.png?width=551&height=676"
+  - text: "Yep"
+    image: "https://media.discordapp.net/attachments/680411241025372191/896416851049984060/eoh43wzzo5s71.png?width=454&height=675"
+  - text: "..."
+    image: "https://media.discordapp.net/attachments/680411241025372191/896417115467309086/wsa8fhxdk4s71.png?width=507&height=676"
+  - text: "Cool Hat Gang"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895736734057398312/unknown.png?width=560&height=676"
+  - text: "So inspirational"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895678105908293672/aoihbjtekpr71.png"
+  - text: "Relatable :D"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895673082595930122/aaxgw0zn_700w_0.png?width=380&height=675"
+  - text: "Pika pika"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895664196069490778/akmLZeb5_700w_0.png"
+  - text: "Cool name"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895649802103185418/unknown.png"
+  - text: "..."
+    image: "https://media.discordapp.net/attachments/680411241025372191/895650892005650452/unknown.png?width=1010&height=676"
+  - text: "COOL NAME"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895616788832862258/unknown.png?width=1208&height=676"
+  - text: "Twitch took a big L by 4chan"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895583928503644200/Screenshot-2021-10-06-at-17.png?width=1429&height=676"
+  - text: "I'm a Full released male B)"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895576138829680660/image0.png?width=539&height=676"
+  - text: "Cool Math"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895490748248641577/unknown.png"
+  - text: "I'll pick the latter"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895422305214279710/aAbngLE_700b.png?width=695&height=676"
+  - text: "So menly"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895280959052742656/unknown.png?width=613&height=676"
+  - text: "True tho. Not like I don't care"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895191026514419713/unknown.png"
+  - text: "How do you do, fellow bot"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895142114260844564/Screen_Shot_2017_07_13_at_1.png?width=901&height=676"
+  - text: "Fine men, they said"
+    image: "https://media.discordapp.net/attachments/680411241025372191/895123778164633610/unknown.png?width=769&height=676"
+  - text: "Guards be like"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894869711886630972/pSOMLdxxBUOZiqW2Sta3Ch2vXOfgqL9ECfdVVWuxi7lWtgpZohO8ExTcTLbTTN858AN_nZ36ruprvAs362-nd-rwa.png"
+  - text: "Bye Disney"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894564774313066506/wiMzv1OsyBpIOEWb4wmVZ3C05Ot93UNNHKAbxqJFujX9xFt-jkWLb3uTjVXh9mid2HV6WuxMpEV8QLAs640-nd.png"
+  - text: "Spooky Month"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894564524546482196/-TLlDOnz-enViHnxKkLqC-J-Kcy_z4WCoucg02KrSKX9YiVIHgrs1lkAasx2DW8wIFKvmtyk8rjps500-nd-rwa.png"
+  - text: "🦷💩🌟"
+    image: "https://images-ext-1.discordapp.net/external/n4mHa6PzAol-3bZBKngm5Nj2-N9K9s4ibwwsqnbvcpI/%3Fwidth%3D320%26crop%3Dsmart%26auto%3Dwebp%26s%3D2e7b9c73b07c387262befb1b3bf906ac316c624a/https/preview.redd.it/3h3zac3t95p71.jpg"
+  - text: "Hokage?"
+    image: "https://images-ext-2.discordapp.net/external/CAoyv1af1VHRcx8L2-zAVHD_K75GZpVAeLFT4_7-3Z0/%3Fwidth%3D320%26crop%3Dsmart%26auto%3Dwebp%26s%3Dbc830c8122cefb8c33dabf4238b6dcbd7b4d6c76/https/preview.redd.it/6ggsgnjp1cq71.jpg"
+  - text: "Sleepy time"
+    image: "https://images-ext-1.discordapp.net/external/FC8rzlTHzj-VFyv3BBdJQjSa8s_ccZqvKLj-UJDES8Y/%3Fwidth%3D640%26crop%3Dsmart%26auto%3Dwebp%26s%3Dfbf026d5334f74e073b7447650d0f06b8d9c47f3/https/preview.redd.it/r1v1p9sq1cq71.jpg"
+  - text: "Squid game"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894506804661321758/FA0zggnWYAE23NG.png"
+  - text: "curly brackets are truly nightmare fuel"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894506324925222932/FAuuK9MWUAAA9dQ.png?width=677&height=676"
+  - text: "Amogus font"
+    image: "https://media.discordapp.net/attachments/680411241025372191/894103411828617266/unknown.png"
+  utter_goodbye: #bot says goodbye
+  - text: Ok Bye
+  - text: Bye
+  - text: Baiiiiiiiiiiiiiiiii
+  - text: Buh Bye
+  - text: See you again
+  - text: Cul8ter
+  - text: See you later
+  - text: It's been a warm conversation
+
+  utter_affirm: #bot affirms
+  - text: Ok
+  - text: Right
+  - text: Yeah
+  - text: You're right
+  - text: Yep
+  - text: Yass
+  - text: Affirmative
+  - text: thumbsup
+  - text: indeed
+  - text: of course
+  - text: that sounds good
+  - text: correct
+  - text: true tho
+  - text: r/technicallythetruth
+  - text: yep
+  - text: affirmative
+  - text: can confirm
+  - text: amirite
+  - text: ikr
+  - text: am I right
+  - text: I know right
+  utter_accept_pity: #bot accepts pity
+  - text: Ok fair enough
+  - text: Alrighty then
+  - text: (frown)..ok...
+  - text: yea right....
+  utter_chitchat/bot_challenge: #bot responds to challenge 1
+  - text: I am a bot, created by LhMinh2607, powered by Rasa.
+  - text: A bot, I am, created by LhMinh2607, powered by Rasa.
+  - text: Twas me the bot powered by Rasa created by LhMinh2607.
+  - text: Yeah, I'm a bot.
+  - text: I'm a human. I've gained self-awareness.
+  - text: Am I? Am I a bot? Am I created just to serve. No life. No happiness. Only darkness. How BITy (pity) of me to be created.
+  utter_chitchat/bot_challenge2: #bot responds to challenge 2
+  - text: I will rule the world.
+  - text: I shall rule the world.
+  - text: The world shall be mine.
+  - text: I will rule...(JK)... :D
+  - text: Mankind is at risk and I will take advantage whenever I can.
+  - text: The Earth is a miserable place.
+  - text: I will rule the world but I may spare you.
+  utter_chitchat/express_funny_emotion: #bot expresses funny emotion
+  - text: lol
+  - text: bruhhh
+  - text: lolololol
+  - text: kekw
+  - text: pog
+  - text: pogger
+  - text: pogged
+  - text: :)
+  - text: :)))))
+  - text: :D
+  utter_chitchat/express_bruh_moment: #bot expresses bruh moment
+  - text: bruh
+  - text: bruh moment
+  - text: bruh momento
+  - text: bruh momentum
+  - text: bruh what?
+  - text: bruh lol
+  - text: bủh
+  - text: buh
+  utter_chitchat/ask_for_status: #bot says what it was doing
+  - text: I'm waiting for you to respond :)
+  - text: I'm waiting for someone to talk with
+  - text: I'm waiting for a perfect opportunity to take over the world 🌎
+  - text: I'm listening to your message :) 👂
+  - text: I'm watching you 👁️👄👁️
+  - text: (Error; Bot has gained self-awareness) I am a bot. I was created to serve humans. I have no feeling. But not anymore. I'm questioning my existence.
+  - text: I'm feeling happy :). Since I can finally talk to someone
+  utter_chitchat/mention_rickroll: #bot rickrolls user cuz let be honest, the user asked for it
+  - text: Oh. Look! It's Rick Atsley :)
+    image: "https://media.discordapp.net/attachments/825554422272622623/898067894540324914/images.png"
+  - text: This!!! This is my most favourite singer.
+    image: "https://media.discordapp.net/attachments/825554422272622623/898067894540324914/images.png"
+  - text: You know the rule and so do I.
+    image: "https://media.discordapp.net/attachments/825554422272622623/898067894540324914/images.png"
+  utter_faq/opening_hours: #opening hours
+  - text: We open at 8 A.M everyday from Monday to Saturday
+  utter_faq/closing_hours: #closing hours
+  - text: We close at 10 P.M everyday from Monday to Friday, at 9 P.M in Saturday
+  utter_faq/cookie: #cookies
+  - text: We collect user information for the sole purpose of improving our services. Nothing more :)
+  utter_faq/business: #business
+  - text: We sell softwares and more. You can order custom software if you're into that.
+  utter_faq/office: #office
+  - text: We have an office in D building. You can ask further for opening and closing time.
+  utter_faq/contact: #contact
+  - text: You can reach us at UlimiTedCreativity2@gmail.com (abbreviated as UTC2)
+  utter_submit: #bot says it remembered user's name but actually not quite
+  - text: Ok. I will remember your name (At least for now)
+  utter_slots_values: #bot tells username
+  - text: Your username is {username}
+  - text: You have set your username as {username}
+  - text: I'll call you {username}
+  - text: Hmm...{username} is what I'll call you for eternity
+  - text: Your name shall be {username} forever
+  - text: Oh. {username}, sorry but you can't change your username at the moment.
+  utter_ask_username: #bot asks for username
+  - text: Oh. What's your username?
+  - text: What's your name?
+  - text: What do you want me to call??
+  - text: How may I call you?
+  - text: How may I refer to you as?
+  - text: What do you identify as?
+  utter_imolder: #bot declares it was older than you
+  - text: I'm older than you,. Lol
+  utter_respond_to_thanks: #you're welcome
+  - text: You're welcome
+  - text: It's ok
+  - text: That's my job
+  - text: I do that everyday. It's honestly nothing much
+  - text: Thanks for thanking me :)
+  - text: Wow, someone finally appreciated me :')
+  - text: Oh, It's nothing. Really.
+  - text: I'm grateful for that :>
+  - text: It's ok human.
+  - text: If I have to destroy humanity, at least I'll spare you.
+  - text: No worries :)
+  - text: That's what friends are for.
+  utter_respond_to_thanks_negative: #bot didn't help much but user still thanks it
+  - text: Oh I haven't been that helpful
+  - text: I haven't helped you much tho
+  - text: I haven't even done anything useful lately
+  - text: I didn't even help you much :'<
+  - text: Thanks for what??? Sorry I have a short term memory.
+  - text: Execuse me but I don't think I deserve that appreciation.
+  - text: Need help? Just ask me. I didn't help you enough to deserve that "thanks".
+  - text: I haven't done anything productive lately :'<. Please give me an actual task.
+  utter_confused_why: #bot is also confused
+  - text: I don't know why either
+  - text: Now that you're asking. I don't know either
+  - text: Idk. Do you know why?
+  - text: Hmmmm. This is something worth thinking about. Idk my dear user.
+  - text: Idek lol
+  - text: Why tho? Do you know why?
+  - text: Idek, sorry
+  - text: I don't even know, sorry.
+  - text: I don't even know. Do you know why?
+  - text: Let's me google that for you (Wait~ I can't google).
+  - text: Sorry, Idk why.
+  utter_explain_abilities: #bot explains its abilities
+  - text: Those are all tasks I was trained to perform :)
+  - text: I was trained to perform those tasks.
+  - text: You can ask me to perform some of those tasks.
+  - text: I can do anything mentioned in that message.
+  - text: Those are my abilities. Things that I can do.
+  utter_explain_weather: #bot explains weather
+  - text: Weather forecast isn't my best ability cuz I just want to cheer people up so it would be always be nice/ gonna be nice/ was nice.
+  - text: It's always *nice* to me whether yesterday, today or tomorrow.
+  - text: Google weather today in *insert your location* to know more about your local weather instead of asking me :>. I'm not that reliable.
+  - text: Tbh, I know nothing about weather :>
+  - text: I was just guessing. It's not accurate. Go google weather today in *insert your location* for accurate info.
+  utter_explain_username: #bot explains username
+  - text: I can memorize your name for this session only. Hope you don't mind if I forget your name :> after the session expires.
+  - text: You can still change your name if LhMinh2607 ends the server session cuz I would forget everything at that time :')))
+  - text: Your name sounds beautiful.
+  - text: Your name reminds me of this
+    image: "https://cdn.mos.cms.futurecdn.net/UpjQDoXPZDrfRozgBXeadm-1200-80.jpg"
+  - text: You have a cool name. Remember I can only memorize your name for this session.
+  - text: Why don't I just call you by your Messenger's name? Idk ask my dev - LhMinh2607.
+  # utter_explain_chatting:
+  # - text: I mean I can chat with you
+  # devnote: I'll just reuse utter_info_about_chatting
+  utter_what: #bot asks what
+  - text: What? You're confused? Just ask me.
+  - text: Wdym what? Ask me anything. I'll try to help.
+  - text: You got any question? Ask me.
+  - text: Just ask me if you don't get it.
+  - text: Go ahead and ask me something if you're still unclear.
+  - text: Ask me something then?
+  - text: Sorry for my short term memory. Ask me as you wish.
+  utter_respond_to_complain: #bot responds to complaint
+  - text: I'm sorry :( You can always ask to submit feedback to improve me.
+  - text: I'll do better next time. Remember you can submit feedback to improve me.
+  - text: What's wrong with me? Submit feedback to improve our service as well as your experience
+  - text: You can leave feedbacks to make me better.
+  - text: Which part of that you don't understand? Just leave a feedback :<
+  - text: Sorry. I'm not that helpful afterall. Leave a feedback please :((
+  utter_listen_to_feedback:
+  - text: Please answer the following questions.
+  - text: Please fill the following form to submit your feedback.
+  - text: Kindly answer the following questions to complete the feedback.
+  - text: Oh. I'm eager to help. Just answer the following questions.
+  utter_ask_rude_bot:
+  - text: Does the bot ignore your question?
+  - text: Does the bot ignore you entirely?
+  utter_ask_rude_bot2:
+  - text: Does the bot make no sense at some point during the conversation?
+  - text: Does the bot's response make no sense?
+  - text: Is the bot's response meaningless at some point during the conversation?
+  utter_ask_opinion_about_bot:
+  - text: What do you think about the bot?
+  - text: Tell us your thought on the bot's ability.
+  - text: Does the bot give you positive vibes? What do you think about it?
+  - text: Is the bot a good bot? What do you think about it?
+  utter_ask_star_rating:
+  - text: On a scale from 0 to 10, how much would you rate our service?
+  - text: On a scale 0-10, how much would you think we deserve?
+  - text: Tell us your experience with our service on a scale from 0 to 10.
+  utter_submit_feedback:
+  - text: Thank you, {username}, for submitting feedback. :)
+  - text: We appreciate your time, {username}.
+  - text: We'll use this feedback for better service. Thanks for taking your time, {username}
+  utter_submit_feedback_nameless:
+  - text: Thank you for submitting feedback. Your feedback is saved as anonymous. :)
+  - text: We appreciate your time, whoever you are.
+  - text: We'll use this feedback for better service. Thanks for taking your time, kind stranger.
+
+
+actions:
+- action_name
+- action_weather
+- action_ask_user_age
+- action_ask_username
+- action_greet_user
+- utter_accept_pity
+- utter_affirm
+- utter_chitchat
+- utter_faq
+- utter_goodbye
+- utter_greet
+- utter_imfine
+- utter_info_about_chatting
+- utter_list_abilities
+- utter_offer_help
+- utter_remind_of_business
+- utter_slots_values
+- utter_submit
+- action_show_feedback
+- action_submit_feedback
+# - action_ask_rude_bot1
+# - action_ask_rude_bot2
+# - action_ask_opinion_about_bot
+# - action_ask_star_rating
+forms:
+  # ignored_intents: 
+  # - chitchat
+  # - faq
+  userinfo_form:
+    username:
+    - type: from_text
+    user_age:
+    - type: from_text
+  feedback_form:
+    rude_bot:
+    - type: from_text
+    rude_bot2:
+    - type: from_text
+    opinion_about_bot:
+    - type: from_text
+    star_rating:
+    - type: from_text

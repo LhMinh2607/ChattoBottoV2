@@ -1,0 +1,10 @@
+[
+  {
+    "text": "I don't feel very well",
+    "intent_response_key_target": "chitchat/mood_bad",
+    "intent_response_key_prediction": {
+      "name": "chitchat/mood_great",
+      "confidence": 0.9763810634613037
+    }
+  }
+]

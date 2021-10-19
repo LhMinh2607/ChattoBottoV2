@@ -1,0 +1,416 @@
+version: "2.0"
+
+stories:
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_are_you
+  - action: utter_imfine
+
+- story: greeting2
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: how_are_you
+  - action: utter_imfine
+  - intent: goodbye
+  - action: utter_goodbye
+
+# - story: greeting with name
+#   steps:
+#   - intent: slot{"username":"LhMinh2607"}
+#   - action: utter_greet_with_name
+
+
+- story: pity
+  steps:
+  - intent: deny
+  - action: utter_accept_pity
+
+- story: support
+  steps:
+  - intent: help
+  - action: utter_offer_help
+  - action: utter_list_abilities
+  - intent: affirm
+  - action: utter_affirm
+
+- story: support2
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: greet
+  - action: utter_offer_help
+  - action: utter_list_abilities
+
+- story: support and thanking
+  steps:
+  - intent: help
+  - action: utter_offer_help
+  - action: utter_list_abilities
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: support and thanking
+  steps:
+  - intent: help
+  - action: utter_offer_help
+  - action: utter_list_abilities
+  - intent: ask_what
+  - action: utter_explain_abilities
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: abilities
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: list_abilities
+  - action: utter_list_abilities
+
+- story: abilities and thanking
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: list_abilities
+  - action: utter_list_abilities
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: abilities and what
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: list_abilities
+  - action: utter_list_abilities
+  - intent: ask_what
+  - action: utter_explain_abilities
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: abilities and complaining
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: list_abilities
+  - action: utter_list_abilities
+  - intent: complain
+  - action: utter_respond_to_complain
+
+
+- story: info about chatting
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: info_about_chatting
+  - action: utter_info_about_chatting
+
+- story: info about chatting and thanking
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: info_about_chatting
+  - action: utter_info_about_chatting
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: info about chatting and ask what
+  steps:
+  - intent: greet
+  - action: action_greet_user
+  - intent: info_about_chatting
+  - action: utter_info_about_chatting
+  - intent: ask_what
+  - action: utter_info_about_chatting
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+# - story: send pics
+#   steps:
+#   - intent: greet
+#   - action: action_greet_user
+#   - intent: send_
+#   - action: utter_info_about_chatting
+
+# - story: send pics
+#   steps:
+#   - intent: greet
+#   - action: action_greet_user
+#   - intent: info_about_chatting
+#   - action: utter_info_about_chatting
+
+- story: only what
+  steps:
+  - intent: ask_what
+  - action: utter_what
+
+- story: only why
+  steps:
+  - intent: ask_why
+  - action: utter_what
+
+- story: only affirm
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+
+
+
+- story: just thanking
+  steps:
+  - intent: thanks
+  - action: utter_respond_to_thanks_negative
+
+- story: just thanking
+  steps:
+  - intent: thanks
+  - action: utter_respond_to_thanks_negative
+  - intent: thanks
+  - action: utter_respond_to_thanks_negative
+  
+
+# - story: remind of business
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: list_abilities
+#   - action: utter_list_abilities
+#   - intent: chitchat
+#   - action: utter_remind_of_business
+
+# - story: remind of business 2
+#   steps:
+#   - intent: help
+#   - action: utter_offer_help
+#   - action: utter_list_abilities
+#   - intent: chitchat
+#   - action: utter_remind_of_business
+
+# - story: remind of business 3
+#   steps:
+#   - intent: help
+#   - action: utter_offer_help
+#   - action: utter_list_abilities
+#   - intent: affirm
+#   - action: utter_affirm
+#   - intent: chitchat
+#   - action: utter_remind_of_business
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_great
+#   - action: utter_happy
+
+# - story: happy path
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: how_are_you
+#   - action: utter_imfine
+#   - action: utter_happy
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_bad
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_bad
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_goodbye
+
+- story: ask about weather
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+
+- story: ask about weather and thanking
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: ask about weather and why
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: ask_why
+  - action: utter_explain_weather
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: ask about weather and what
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: ask_what
+  - action: utter_explain_weather
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: ask about weather 3
+  steps:
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: ask_about_weather
+  - action: action_weather
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: ask for name
+  steps:
+  - intent: ask_for_name
+  - action: action_name
+  #- action: action_ask_for_user_name
+  - intent: deny
+  - action: utter_goodbye
+
+- story: thanks for FAQ
+  steps:
+  - action: utter_faq
+  - intent: thanks
+  - action: utter_respond_to_thanks 
+
+- story: thanks for Chitchat
+  steps:
+  - action: utter_chitchat
+  - intent: thanks
+  - action: utter_respond_to_thanks 
+  
+# - story: interactive_story_1
+#   steps:
+#   - intent: chitchat/bot_challenge2
+#   - action: utter_chitchat/bot_challenge2
+#   - intent: affirm
+
+
+- story: give name
+  steps:
+  - intent: introduce
+  - action: userinfo_form
+  - active_loop:  
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set: 
+    - username: LhMinh2607
+  - slot_was_set:
+    - requested_slot: user_age
+  - slot_was_set:
+    - user_age: "21"
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  # - action: utter_submit
+  - action: utter_slots_values
+  - intent: thanks
+  - action: utter_respond_to_thanks
+
+- story: explain username
+  steps:
+  - action: utter_slots_values
+  - intent: ask_what
+  - action: utter_explain_username
+- story: explain username
+  steps:
+  - action: utter_slots_values
+  - intent: ask_why
+  - action: utter_explain_username
+
+
+- story: give alias
+  steps:
+  - intent: introduce_name
+  - action: utter_greet
+  
+# - story: give name #interactive_story_1
+#   steps: 
+#   - intent: introduce
+#   - action: utter_ask_for_username
+#   - action: userinfo_form
+#   - active_loop: userinfo_form
+#   - slot_was_set:
+#     - requested_slot: username
+#   - intent: introduce
+#     entities:
+#     - username: LhMinh2607
+#   - slot_was_set:
+#     - username: LhMinh2607
+#   - action: utter_ask_for_userage
+#   - action: userinfo_form
+#   - slot_was_set:
+#     - requested_slot: user_age
+#   - intent: introduce
+#     entities:
+#     - user_age: '21'
+#   - slot_was_set:
+#     - user_age: '21'
+#   - action: utter_submit
+#   - action: utter_slots_values
+
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: how_are_you
+#   - action: utter_imfine
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+
+
+- story: feedback
+  steps:
+  - intent: feedback
+  - action: feedback_form
+  - active_loop:  
+  - slot_was_set:
+    - requested_slot: rude_bot
+  - slot_was_set: 
+    - rude_bot: Yes, it ignores me
+  - slot_was_set:
+    - requested_slot: rude_bot2
+  - slot_was_set:
+    - rude_bot2: Yes, it makes no sense
+  - slot_was_set:
+    - requested_slot: opinion_about_bot
+  - slot_was_set:
+    - opinion_about_bot: Bot is fine but pretty stupid sometime
+  - slot_was_set:
+    - requested_slot: star_rating
+  - slot_was_set:
+    - star_rating: 5
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  # - action: utter_submit
+  - action: action_submit_feedback  #action_submit_feedback causes BSOD seriously
+  - intent: thanks
+  - action: utter_respond_to_thanks #causes BSOD seriously
+
+
+- story: view feedback
+  steps:
+  - intent: view_feedback
+  - action: action_show_feedback
+  - intent: thanks
+  - action: utter_respond_to_thanks
